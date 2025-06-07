@@ -13,7 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://car-rental-backend-hgwt.onrender.com/",
+  origin: "https://rental-front-kappa.vercel.app//",
   credentials: true
 }));
 app.use(express.json());
