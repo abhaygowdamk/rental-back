@@ -8,7 +8,7 @@ const app = express();
 
 // CORS setup allowing your frontend URL only, with credentials
 app.use(cors({
-  origin: "https://rental-front-kappa.vercel.app",
+  origin: "https://rental-front-kappa.vercel.app/",
   credentials: true,
 }));
 
