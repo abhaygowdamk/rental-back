@@ -6,15 +6,11 @@ const connectDB = require("./config/db");
 
 const app = express();
 
-// CORS setup allowing your frontend URL only, with credentials
-const cors = require("cors");
-
-const cors = require('cors');
-
+// CORS setup allowing your frontend URL only, with credentials support
 app.use(cors({
-  origin: 'https://rental-front-kappa.vercel.app' // No trailing slash!
+  origin: 'https://rental-front-kappa.vercel.app', // Make sure no trailing slash here
+  credentials: true, // Allow cookies/auth credentials
 }));
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,7 +26,7 @@ const startServer = async () => {
     await connectDB();
     console.log("MongoDB connection successful");
 
-    // Routes
+    // Register routes
     app.use('/api/auth', require('./routes/auth'));
     app.use('/api/search', require('./routes/searchCar'));
     app.use('/api/econ-cars', require('./routes/econCars'));
