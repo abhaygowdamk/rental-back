@@ -7,10 +7,13 @@ const connectDB = require("./config/db");
 const app = express();
 
 // CORS setup allowing your frontend URL only, with credentials
+const cors = require("cors");
+
 app.use(cors({
-  origin: "https://rental-front-kappa.vercel.app/",
+  origin: "https://rental-front-kappa.vercel.app",  // ✅ no trailing slash!
   credentials: true,
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
