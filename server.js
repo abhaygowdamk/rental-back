@@ -8,7 +8,7 @@ const app = express();
 
 // CORS setup allowing your frontend URL only, with credentials support
 app.use(cors({
-  origin: 'https://rental-front-kappa.vercel.app', // Make sure no trailing slash here
+  origin: 'https://rental-front-fa5s.vercel.app', // Make sure no trailing slash here
   credentials: true, // Allow cookies/auth credentials
 }));
 
